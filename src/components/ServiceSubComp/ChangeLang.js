@@ -16,8 +16,7 @@ function ChangeLang() {
     })
 
     return <div>
-        Выберите язык:
-        <select>
+        <select className='change_lang button'>
             {options}
         </select>
     </div>

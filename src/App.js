@@ -52,9 +52,11 @@ function App() {
 		<Reducer.Provider value={{state, dispatch}}>
 			<Title/>
 			{!state.isStart && <ServiceMenu/>}
-			<CurrentInfo/>
+			<div className='text_area_container'>
+				<CurrentInfo/>
+				<TextArea/>
+			</div>
 			{state.isFinish && <Result/>}
-			<TextArea/>
 		</Reducer.Provider>
 	)
 }

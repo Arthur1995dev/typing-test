@@ -4,9 +4,9 @@ import { Reducer } from "./reducerComp/reducer";
 function CurrentInfo() {
     const {state} = useContext(Reducer);
 
-    return <div>
-        <p className="speed">Ваша скорость {state.speed} знаков в минуту.</p>
-        <p className="accuracy">Точность {state.accuracy}%</p>
+    return <div className="current-info">
+        <p className="speed">Cкорость <br/>{state.speed} зн/мин.</p>
+        <p className="accuracy">Точность <br/>{state.accuracy}%</p>
     </div>
 }
 export default CurrentInfo;

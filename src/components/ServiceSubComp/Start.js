@@ -8,7 +8,7 @@ function Start() {
     const startHundler = () => {
         dispatch({type: 'SET_START'});
     }
-    return <button className="start-button" onClick={startHundler}>Начать тест</button>
+    return <button className="start-button button" onClick={startHundler}>Начать тест</button>
 }
 
 export default Start;

@@ -10,7 +10,7 @@ function GetTextBtn() {
             dispatch({type: 'SET_TEXT', text: text})
         })
     }
-    return <button onClick={clickHundler}>Получить текст</button>
+    return <button className="get_text-button button" onClick={clickHundler}>Получить текст</button>
 }
 
 export default GetTextBtn;

@@ -12,7 +12,7 @@ function TextArea() {
                 </span>
     })
 
-    return <p className="text-area">{text}</p>
+    return <div className="text-area">{text}</div>
 }
 
 export default TextArea;
