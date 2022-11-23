@@ -16,7 +16,7 @@ function ChangeLang() {
     })
 
     return <div>
-        <select className='change_lang button'>
+        <select className='change_lang'>
             {options}
         </select>
     </div>

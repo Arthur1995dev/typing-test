@@ -8,14 +8,16 @@ function Result() {
     function clickHundler() {
         dispatch({type: 'SET_RESET'})
     }
-    return <div className="_container">
-        <div className="_result-menu">
-            <p>Итоговый результат:</p>
-            <p>Точность: {state.accuracy}%</p>
-            <p>Скорость: {state.speed} зн/мин.</p>
-            <button onClick={clickHundler} className="button">Начать заного</button>
+    return (
+        <div className="_container">
+            <div className="result-menu">
+                <p>Итоговый результат:</p>
+                <p>Точность: {state.accuracy}%</p>
+                <p>Скорость: {state.speed} зн/мин.</p>
+                <button onClick={clickHundler} className="button">Начать заного</button>
+            </div>
         </div>
-    </div>
+    )
 }
 
 export default Result

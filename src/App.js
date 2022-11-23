@@ -6,8 +6,7 @@ import './App.css';
 
 import Title from './components/Title';
 import ServiceMenu from './components/ServiceMenu';
-import CurrentInfo from './components/CurrentInfo';
-import TextArea from './components/TextArea';
+import TypingText from './components/TypingText';
 import Result from './components/Result';
 
 
@@ -51,11 +50,8 @@ function App() {
 	return (
 		<Reducer.Provider value={{state, dispatch}}>
 			<Title/>
+			<TypingText/>
 			{!state.isStart && <ServiceMenu/>}
-			<div className='text_area_container'>
-				<CurrentInfo/>
-				<TextArea/>
-			</div>
 			{state.isFinish && <Result/>}
 		</Reducer.Provider>
 	)

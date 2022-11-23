@@ -3,10 +3,17 @@ import { Reducer } from "../reducerComp/reducer";
 
 function Start() {
     
-    const {dispatch} = useContext(Reducer);
+    const {state, dispatch} = useContext(Reducer);
 
     const startHundler = () => {
-        dispatch({type: 'SET_START'});
+        let promise = new Promise((resolve, reject) => {
+            if (state.text.length) {
+                resolve()
+            } else reject();
+        })
+        promise.then(() => {
+            dispatch({type: 'SET_START'});
+        })
     }
     return <button className="start-button button" onClick={startHundler}>Начать тест</button>
 }

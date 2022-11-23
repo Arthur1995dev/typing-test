@@ -7,7 +7,7 @@ function ServiceMenu() {
 
     return (
         <div className='_container'>
-            <div className='_container-menu'>
+            <div className='service-menu'>
                 <ChangeLang/>
                 <GetTextBtn/>
                 <Start/>
