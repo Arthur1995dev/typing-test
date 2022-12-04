@@ -1,15 +1,20 @@
 //Переменные
-$btn-color: #008500;
+$green-color: #008500;
 
 //Миксины
 @mixin flex_center {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
 }
 
 .true-char {
-    color: #00CC00;
+    color: $green-color;
 }
 
 body {
@@ -17,19 +22,14 @@ body {
 }
 #root {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    height: 100vh;
-    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-//Title
-h1 {
-    min-width: 100%;
-    max-height: 100px;
-    text-align: center;
-}
-//============
+
 //Меню выбора языка/запуск, меню результата
 ._container {
     width: 100%;
@@ -64,21 +64,29 @@ h1 {
 }
 //=================
 
-.typing-text_container {
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
+//Title
+h1 {
+    min-width: 100%;
+    max-height: 100px;
+    text-align: center;
+    font-size: 2rem;    
+}
+//============
+
+.typing-test_container {
+    @include flex-between;
     height: 300px;
-    border: 1px solid black;
-    border-radius: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    margin: 0 15px 0 15px;
     .current-info,
-    .text-area {
+    .text-area_container {
         height: 100%;   
         font-family: 'Times New Roman', Times, serif;
-        font-size: 22px;
+        font-size: 1.2rem;
     }
     .current-info {
-        flex-basis: 200px;
+        width: 25%;
         border-radius: 10px;
         background-color: #FF4040;
         .speed,
@@ -90,34 +98,49 @@ h1 {
             text-align: center;
         }
     }
-    .text-area {
-        flex-basis: 600px;
-        padding-left: 5px;   
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 22px;
-    }
-    .reset_container {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.3s ease;
-        img {
-            display: block;
+    .text-area_container {
+        width: 75%;
+        @include flex-between;
+        border: 1px solid black;
+        border-radius: 10px;
+        .text-area {
+            width: 100%;
+            margin: 0;
+            padding: 0 5px 0 1px;
+        }
+        .reset_container {
+            height: 100%;
+            width: 30px;
+            margin-right: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .resetBtn {
+                height: 28px;
+                width: 28px;
+                @include flex_center;
+                transition: 0.3s;
+                background-color: #FF4040;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+            .progress_bar {
+                min-width: 100%;
+                height: 80%;
+                border-radius: 10px;
+            }
         }
     }
-    .reset_container:hover {
-        background-color: #FF4040;
+    .resetBtn:hover {
+        box-shadow: 0 0 2px 2px #FF4040;
     }
-    .reset_container:active {
+    .resetBtn:active {
         background-color: #BF3030;
     }
 }
 .button {
     @include flex_center;
-    background-color: $btn-color;
+    background-color: $green-color;
     
     outline: none;
     border: none;
@@ -148,4 +171,23 @@ h1 {
     width: 120px;
     height: 30px;
     margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .typing-test_container {
+        flex-direction: column;
+        .text-area_container {
+            width: 100%;
+            .text-area {
+                font-size: 17px;
+                width: 99%;
+            }
+        }
+        .current-info {
+            @include flex-between;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+        }
+    }
 }
