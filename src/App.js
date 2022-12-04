@@ -2,6 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import reducer, { Reducer } from './components/reducerComp/reducer';
 import initialState from './components/reducerComp/initialState';
 import getTime from './components/functions/getTime';
+import resize from './components/functions/resize';
 import './App.css';
 
 import Title from './components/Title';
@@ -40,6 +41,7 @@ function App() {
     useEffect(() => {
         window.addEventListener('keydown', keyDown);
 		window.addEventListener('keyup', keyUp);
+		window.addEventListener('resize', resize);
 		return () => {
 			window.removeEventListener('keydown', keyDown)
 			window.removeEventListener('keyup', keyUp)
