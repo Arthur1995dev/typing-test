@@ -8,7 +8,7 @@ function TypingText() {
     let text = state.text.split('').map((char, index) => {
         return <span 
                 key={index}
-                className={state.charIndex > index ? 'true-char' : ''}>
+                className={state.charIndex > index ? 'true-char' : state.charIndex === index ? 'current-char' : ''}>
                 {char}
                 </span>
     })
