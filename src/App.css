@@ -2,6 +2,11 @@
   color: #008500;
 }
 
+.current-char {
+  background-color: green;
+  color: white;
+}
+
 body {
   margin: 0;
 }
@@ -43,7 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 350px;
   height: 250px;
   background-color: rgba(244, 247, 244, 0.9);
   box-shadow: 0 0 10px 2px rgb(108, 105, 105);
@@ -71,7 +76,7 @@ h1 {
 .typing-test_container .text-area_container {
   height: 100%;
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .typing-test_container .current-info {
   width: 25%;
