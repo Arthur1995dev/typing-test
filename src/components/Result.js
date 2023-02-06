@@ -14,7 +14,7 @@ function Result() {
                 <p>Итоговый результат:</p>
                 <p>Точность: {state.accuracy}%</p>
                 <p>Скорость: {state.speed} зн/мин.</p>
-                <button onClick={clickHundler} className="button">Начать заного</button>
+                <button onClick={clickHundler} className="result-btn button">Начать заного</button>
             </div>
         </div>
     )

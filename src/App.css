@@ -48,13 +48,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 350px;
+  width: 350px;
   height: 250px;
   background-color: rgba(244, 247, 244, 0.9);
   box-shadow: 0 0 10px 2px rgb(108, 105, 105);
   border-radius: 10px;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 1.3rem;
 }
 
 h1 {
@@ -146,9 +145,13 @@ h1 {
   border-radius: 5px;
   font-family: "PT Sans", sans-serif;
   color: white;
-  font-size: 18px;
+  font-size: 1em;
   font-weight: 500;
   transition: 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00CC00;
 }
 
 .start-button {
@@ -157,14 +160,15 @@ h1 {
   font-size: 20px;
 }
 
-.button:hover {
-  background-color: #00CC00;
-}
-
 .get_text-button {
   width: 200px;
   height: 30px;
   transition: 0.3s ease;
+}
+
+.result-btn {
+  width: 200px;
+  height: 40px;
 }
 
 .change_lang {
@@ -174,6 +178,12 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  ._container {
+    padding: 0 10px;
+  }
+  ._container .service-menu {
+    max-width: 90%;
+  }
   .typing-test_container {
     flex-direction: column;
   }
@@ -181,7 +191,7 @@ h1 {
     width: 100%;
   }
   .typing-test_container .text-area_container .text-area {
-    font-size: 17px;
+    font-size: 1rem;
     width: 99%;
   }
   .typing-test_container .current-info {
